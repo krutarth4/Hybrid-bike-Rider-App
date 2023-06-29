@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "838059371418",
+    "project_id": "socialwear-bikerider-fcm",
+    "storage_bucket": "socialwear-bikerider-fcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838059371418:android:b38ac07fd5ce8e22aa6823",
+        "android_client_info": {
+          "package_name": "com.dfki.socialwear.bikerider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838059371418-osqnc6krn0krfoh12v1lrsc1p21dgbnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkxFyCLtM6A5KYJzTyTBocFfbatuIcUQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838059371418-osqnc6krn0krfoh12v1lrsc1p21dgbnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
