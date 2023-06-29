@@ -1,0 +1,125 @@
+.leaflet-control-zoom {
+  position: relative;
+  top: 30%;
+  margin-top: 100px;
+  padding-top: 100px;
+}
+.leaflet-verticalcenter .leaflet-control {
+  margin-bottom: 10px;
+}
+.leaflet-verticalcenter {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  top: 50%; /* possible because the placeholder's parent is the map */
+  transform: translateY(-50%); /* using the CSS3 Transform technique */
+  padding-top: 10px;
+}
+
+.top {
+  z-index: 99999;
+  position: absolute;
+  height: 15vh;
+  width: 100vw;
+}
+
+.speech-btn {
+  --background: var(--ion-color-chatblue, darkblue);
+}
+
+.speech-btn.isActive {
+  --background: var(--ion-color-chatred, darkred);
+}
+
+#map_home {
+  // pointer-events: none;
+  padding-top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  position: relative;
+
+  .localisationButton {
+    position: absolute;
+    z-index: 99999999999;
+    right: 20px;
+    top: 30px;
+    font-size: 40px;
+  }
+  .gpsbutton {
+    //background-color: rgba(239, 166, 32, 0.627);
+    float: right;
+    position: absolute;
+    bottom: 14%;
+    right: 1%;
+    z-index: 99999 !important;
+  }
+}
+
+.searchbar-md {
+  padding: 8px 0px;
+  width: 100%;
+}
+ion-list {
+  padding: 0px;
+  width: 80%;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.toolbar-title {
+  color: #ffffff;
+  display: inline;
+  margin-left: 70px;
+}
+
+.lol {
+  display: flex;
+}
+
+
+.locate_icon {
+  color: black;
+}
+
+.xx {
+  border-radius: 25px;
+  background-color: orange;
+  //border-style: hidden;
+  border-color: orangered;
+}
+ion-searchbar {
+  //--icon-color: yellow;
+  --border-radius: 25px;
+  //display: flex;
+  margin: 0 auto;
+  //border-color: orangered;
+  //border-style: double;
+}
+
+ion-item {
+  //border-radius: 10%;
+  width: 80%;
+  margin: 0 auto;
+  //color: blue;
+  border-color: orange;
+  border-style: hidden hidden hidden solid;
+}
+.btn-search {
+  --background: rgba(10, 2, 2, 0.827);
+  margin: 3px auto;
+  position: absolute;
+  right: 45%;
+}
+.btn-blt {
+  --background: rgba(10, 2, 2, 0.827);
+  margin: 3px auto;
+  position: relative;
+  right: 45%;
+}
+.speech {
+  margin: 10px auto;
+}
+.row-2-btn {
+  justify-content: center;
+}

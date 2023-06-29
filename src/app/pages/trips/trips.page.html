@@ -1,0 +1,146 @@
+<ion-content padding>
+  <div id="map_trips" class="map_trips" style="height: 100%; width: 100%">
+    <div class="top" style="justify-content: center; margin: auto">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3"> </ion-col>
+
+          <ion-col
+            class="topContent"
+            [style.border-color]="border_color"
+            size="8"
+          >
+            <ion-row>
+              <ion-col class="image" size="4"
+                ><ion-img width="50px" [src]="directionalIcon"> </ion-img
+              ></ion-col>
+              <ion-col class="distance">
+                <ion-row
+                  ><h3><b> {{this.navigationMessage}} </b></h3></ion-row
+                >
+                <ion-row *ngIf="this.navigationCalculation != undefined">
+                  <h5>in {{this.navigationCalculation | distancePipe}}</h5>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <!-- 
+  <button
+    class="gpsbuttontrip"
+    id="gpsbuttonidtrip"
+    ion-button
+    color="medium"
+    shape="round"
+    (click)="switchoncamera($event)"
+  >
+    <ion-icon class="locate_icontrip" size="large" name="locate"></ion-icon>
+  </button> -->
+  <div
+    class="requiredSpeed"
+    *ngIf="this.choosenMeetingPoint != undefined && this.choosenMeetingPoint.ETA_user>=0"
+  >
+    <p class="center" id="requirespseedsmall">
+      Required Speed <br />
+      <b>
+        {{suggestedSpeed | number:'1.1-1'}}<br />
+        Kmh
+      </b>
+    </p>
+  </div>
+  <div class="speedometer">
+    <ngx-gauge
+      type="full"
+      [value]="this.showCurrentSpeed"
+      [thick]="10"
+      [size]="80"
+      [min]="0"
+      [max]="50"
+      [foregroundColor]="this.showCurrentSpeedColor"
+      [backgroundColor]="'grey'"
+      label="kmh"
+
+    >
+      <ngx-gauge-value [style.color]="this.showCurrentSpeedColor">
+        {{this.showCurrentSpeed}}
+      </ngx-gauge-value>
+    </ngx-gauge>
+  </div>
+  <div class="stick">
+    <div
+      *ngIf="this.swarmMessage != 'undefined' "
+      class="animate__animated animate__bounceInUp "
+    >
+      <h4 class="center appAlert">{{ this.swarmMessage }}</h4>
+    </div>
+    <div
+      *ngIf="this.checkpointMessage != 'undefined' "
+      class="animate__animated animate__bounceInUp "
+    >
+      <h4 class="center appAlert">{{this.checkpointMessage}}</h4>
+    </div>
+  </div>
+</ion-content>
+<div class="bottomContent" [style.border-color]="border_color">
+  <div
+    class="w3-badge w3-orange w3-large w3-margin-right badge"
+    *ngIf="showSwarmInformation"
+  >
+    {{this.numberOfMembersInSwarm}}
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1"
+        ><ion-button
+          shape="round"
+          fill="outline"
+          size="small"
+          color="dark"
+          (click)="presentAlert()"
+        >
+          <ion-icon name="close-outline"></ion-icon> </ion-button
+      ></ion-col>
+      <ion-col class="center">
+        <div
+          *ngIf="this.choosenMeetingPoint == undefined || this.choosenMeetingPoint.user_ETA_to_leaving_point < 0 "
+        >
+          <p><b> {{this.distance | distancePipe }} </b></p>
+          <p>{{this.yourETA | time}}</p>
+        </div>
+        <div *ngIf="this.choosenMeetingPoint != undefined">
+          <div *ngIf="this.choosenMeetingPoint.ETA_user != undefined">
+            <p *ngIf="this.choosenMeetingPoint.user_distanceToCover >= 0">
+              Join Swarm :
+              <b
+                >{{this.choosenMeetingPoint.user_distanceToCover |
+                distancePipe}}</b
+              >
+              |
+              <b>{{this.choosenMeetingPoint.ETA_user | time}}</b>
+            </p>
+            <p
+              *ngIf="this.choosenMeetingPoint.user_distanceToCover < 0 && this.choosenMeetingPoint.user_ETA_to_leaving_point >=0 "
+            >
+              Leave Swarm :
+              <b
+                >{{this.choosenMeetingPoint.user_distance_to_leaving_point |
+                distancePipe}}</b
+              >
+              |
+              <b
+                >{{this.choosenMeetingPoint.user_ETA_to_leaving_point |
+                time}}</b
+              >
+            </p>
+          </div>
+          
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

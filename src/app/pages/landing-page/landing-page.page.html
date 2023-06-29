@@ -1,0 +1,80 @@
+<ion-content>
+  <h1 class="mainHeading">Welcome to bike Rider app</h1>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title
+        >Permissons Required
+        {{this.permissionsGranted}}/{{this.totalPermissionRequired}}
+        <sup>*</sup>
+      </ion-card-title>
+      <ion-card-subtitle
+        >Please allow all the permissions in order to use the
+        application</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item class="ion-text-wrap">
+          <ion-label slot="start"> Location Permission </ion-label>
+          <ion-button
+            fill="clear"
+            shape="round"
+            slot="end"
+            [style.color]="locationbutton? 'green':'red'"
+            [style.background]="locationbutton? 'black': 'grey' "
+            (click)="GetLocationPermission()"
+          >
+            <ion-icon
+              slot="end"
+              [name]="locationbutton? 'checkmark-circle' :'close-circle'"
+            ></ion-icon>
+            {{locationbutton ? "Allowed":"Get Permission"}}
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start"> While in app use </ion-label>
+          <ion-button
+            fill="clear"
+            shape="round"
+            slot="end"
+            [style.color]="whileinappusebutton? 'green':'red' "
+            [style.background]="whileinappusebutton? 'black': 'grey' "
+            (click)="precision_WhileInUse()"
+            ><ion-icon
+              slot="end"
+              [name]="whileinappusebutton? 'checkmark-circle' :'close-circle'"
+            ></ion-icon>
+            {{whileinappusebutton ?"Allowed":"Get Permission"}}
+          </ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label slot="start"> Allow all the time </ion-label>
+          <ion-button
+            fill="clear"
+            shape="round"
+            slot="end"
+            [style.color]="allowallthetimebutton? 'green':'red'"
+            [style.background]="allowallthetimebutton? 'black': 'grey' "
+            (click)="precision_allowAllTheTime()"
+            ><ion-icon
+              slot="end"
+              [name]="allowallthetimebutton?'checkmark-circle' :'close-circle'"
+            ></ion-icon>
+            {{allowallthetimebutton ?"Allowed":"Get Permission"}}
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-button
+  class="continueBtn"
+  slot="end"
+  [disabled]="nextbutton"
+  background="black"
+  (click)="goToHome()"
+>
+  Continue
+</ion-button>

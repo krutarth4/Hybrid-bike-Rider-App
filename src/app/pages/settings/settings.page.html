@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">First name</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="" >
+      <ion-label>Your Speed</ion-label>
+      <ion-label >Your min Speed</ion-label>
+      <ion-input type="text" required></ion-input>
+      <ion-label position="floating">Your Max Speed</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required disabled="true"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required disabled="true"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-card>
+        <ion-item>
+        <ion-radio-group [allowEmptySelection]="true" value="cyclingMode">
+          <ion-item>
+            <ion-label>Beginners</ion-label>
+            <ion-radio slot="end" value="dogs"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Moderate</ion-label>
+            <ion-radio slot="end" value="cats"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Advance</ion-label>
+            <ion-radio slot="end" value="turtles"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+      </ion-card>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="warning" expand="block" (click)="saveForm()">Save</ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+
+</ion-content>

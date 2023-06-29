@@ -1,0 +1,67 @@
+<ion-header> </ion-header>
+<ion-content class="no-scroll">
+  <div id="map_home">
+    <div class="top noclick">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <ion-searchbar
+              id="input"
+              class="xx"
+              [(ngModel)]="autocomplete.input"
+              debounce="-200"
+              (ionInput)="UpdateSearchResults()"
+              placeholder="search for destination"
+              (ionClear)="ClearAutocomplete()"
+              align-center
+              searchIcon="location"
+            ></ion-searchbar>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button
+              class="speech"
+              [color]=" !isActive ? 'dark' : 'warning' "
+              (click)="speechtotext()"
+            >
+              <ion-icon name="mic-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row-2-btn">
+          <ion-button
+            class="btn-search"
+            shape="round"
+            strong="true"
+            (click)="goToProposals()"
+          >
+            Get Trips
+          </ion-button>
+         
+        </ion-row>
+      </ion-grid>
+
+      <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item
+          fill="solid"
+          *ngFor="let location of   autocompleteItems"
+          tappable
+          (click)="selectLocationDestination(location)"
+        >
+          {{location.description}}
+        </ion-item>
+      </ion-list>
+
+      <!-- <ion-button (click)="setCurrentAdress()"
+        >Reset current position</ion-button
+      > -->
+    </div>
+    <ion-button
+      class="gpsbutton"
+      id="gpsbuttonid"
+      shape="round"
+      (click)="setview()"
+    >
+      <ion-icon class="locate_icon" name="locate"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

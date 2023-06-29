@@ -1,0 +1,330 @@
+.leaflet-control-zoom {
+  top: 50px;
+}
+.overlay {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999999999999;
+}
+@keyframes overlayFadein {
+}
+.scroll-content {
+  padding: 0 !important;
+}
+
+#map_trips {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  z-index: -2;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 2rem;
+}
+
+ion-header {
+  background: #494f54;
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: 500;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.gpsbuttontrip {
+  //background-color: rgba(239, 166, 32, 0.627);
+  float: right;
+  position: absolute;
+  bottom: 14%;
+  right: 2%;
+  z-index: 99999 !important;
+}
+
+.backbutton {
+  padding: 0;
+  margin-top: 0.7rem;
+  font-size: 2rem;
+  background: #494f54 !important ;
+  border-style: none !important ;
+  box-shadow: none;
+  color: white;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-left: 20px;
+  color: black;
+  padding: 0;
+  display: block;
+}
+/* .distance {
+  margin-top: 1rem;
+  margin-left: 20px;
+  margin-right: 40px;
+  color: white;
+  padding: 0;
+} */
+
+.head-btn {
+  size: 150%;
+  font-size: 20px;
+}
+.spinner {
+  margin-left: 160px;
+}
+.spinner > * {
+  background: white;
+}
+
+.modal {
+  box-sizing: border-box;
+  position: absolute;
+  height: 40%;
+  width: 70%;
+  background: #ecf0f1;
+  top: 100px;
+  left: 45px;
+  z-index: 999999999999;
+  ion-card-header {
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 10px;
+    .goButton {
+      margin-top: 30px;
+    }
+  }
+  .exit-button {
+    width: 40px;
+    height: 40px;
+
+    background: #b2bec3;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+
+    border-radius: 50%;
+  }
+
+  .swarm {
+    box-sizing: content-box;
+    position: absolute;
+    background: #ecf0f1;
+    bottom: 1%;
+    right: 1%;
+    z-index: 999999999999;
+    width: min-content;
+    border: 1px solid black;
+  }
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  z-index: -2;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 2rem;
+}
+
+ion-header {
+  color: white;
+  background: orange;
+}
+
+ion-toolbar {
+  --background: orange;
+}
+.btn-quit {
+  --background: rgba(10, 2, 2, 0.827);
+}
+.locate_icontrip {
+  color: black;
+}
+
+label {
+  color: black;
+}
+.navInfo {
+  color: black;
+}
+.distance{
+  color : black
+}
+
+
+.top {
+  z-index: 99999;
+  position: absolute;
+  height: 15vh;
+  width: 100vw;
+}
+ion-avatar {
+  --border-radius: 50%;
+  background-color: white;
+  float: left;
+position : relative;
+  bottom: 14%;
+  right: 2%;
+  z-index: 99999 !important;
+}
+ion-chip{
+  --border-radius: 50%;
+  background-color: gray;
+  float: left;
+position : absolute;
+  bottom: 14%;
+  right: 2%;
+  size: auto;
+  z-index: 99999 !important;
+}
+.center{
+  text-align: center;
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 5%;
+  margin-top: 2px;
+  display: flex;
+}
+.top{
+  z-index: 999999;
+  
+}
+.topContent{
+  border-style: solid;
+  background-color: white;
+  border-color: white;
+  border-radius: 10px;
+  height:130px;
+  box-shadow: 20px 20px 50px grey;;
+  
+}
+ion-footer{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.speedometer{
+    // float: right;
+   position : absolute;
+    bottom: 18%;
+    left: 2%; 
+    justify-content: center;
+    z-index: 99999 !important;
+    // background: grey;
+    // border-style: solid;
+    border-radius: 50%;
+    // border-color: orange;
+
+    // opacity: 100%;
+}
+.ngx-gauge-meter{
+  background: white;
+  border-radius:50%;
+  margin:0;
+  padding: 0 !important;
+  font-size: 15px;
+
+
+
+}
+
+.requiredSpeed{
+
+  width: 70px; 
+  height: auto; 
+  border: 2px solid ;
+  z-index:99999;
+  background:white;
+  position : absolute;
+    bottom: 35%;
+    left: 2%;
+    font-size: 15px;
+
+}
+
+#requirespseedsmall {
+  font-size: 13px;
+}
+
+.bottomContent{
+  position: relative;
+  width:100%;
+  display: flex;
+  height: auto;
+  box-shadow: 20px 20px 50px grey;;
+  border-style: solid;
+  justify-content: center; // Centers the item
+  bottom: 5px; // Moves it up a little from the bottom
+  // left: 10%;
+  background-color: white;
+  border-top: 5px solid ;
+}
+
+.appAlert{
+  position:relative;
+  width: 100%;
+  display: flex;
+  // border-style: solid;
+  background-color: orange;
+  color: black;
+  justify-content: center;
+  box-shadow: 10px 10px 30px 10px grey;
+  border-radius: 10px;
+
+
+}
+
+.badge{
+  position: absolute;
+  top: -12px;
+  right:0;
+  justify-content: center;
+  display:block;
+
+}
+ion-img{
+  max-width: 70%;
+  max-height: 70%; 
+}
+.stick {
+  position: absolute;
+  width: 100% !important;
+  height: auto;
+  bottom: 5px;
+  z-index: 99999 !important;
+  align-items: center;
+
+  // justify-content: center;
+
+} 
+.a{
+  animation: bounceInUp;
+  animation-duration: 2s;
+
+}
+
+.animate__bounceOutDown{
+  animation-duration: 3s;
+
+}
+
+
+

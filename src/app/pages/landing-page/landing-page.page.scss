@@ -1,0 +1,32 @@
+ion-content {
+  --ion-background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ion-card {
+  --ion-background-color: white;
+  // display:  flex;
+  position: relative;
+  top: 10%;
+  justify-content: center;
+  align-items: center;
+}
+ion-button {
+  // --color: white;
+  display: flex;
+}
+.mainHeading {
+  top: 3%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+ion-item {
+  --padding-start: 0;
+}
+
+.continueBtn {
+  display: flex;
+}
